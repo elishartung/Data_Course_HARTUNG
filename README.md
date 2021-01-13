@@ -7,3 +7,4 @@ UwU
 cigarette
 sildenafil
 GOD I LOVE CODING
+i always say thank you to siri so the machines are nice to me when they take over
