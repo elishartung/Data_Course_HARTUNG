@@ -59,10 +59,16 @@ head(dat)
 # You can access specific columns of a "data frame" by name using '$'
 dat$Species
 dat$Sepal.Length
-
+dat$Sepal.Length * dat$Sepal.Width
+Sepal.Area <- dat$Sepal.Length * dat$Sepal.Width
+dat$Sepal.Area <- Sepal.Area
 # You can also use square brackets to get specific 1-D or 2-D subsets of a data frame (rows and/or columns)
 dat[1,1] # [Rows, Columns]
 dat[1:3,5]
+
+dat[1:3,1,5]
+dat[1:3,c(1,5)]
+
 
 # Plotting ####
 
@@ -168,16 +174,25 @@ for(i in levels(dat$Species)){
 # YOUR REMAINING HOMEWORK ASSIGNMENT (Fill in with code) ####
 
 # 1.  Make a scatterplot of Sepal.Length vs Sepal.Width. See if you can get the points to be colored by "Species"
-
+plot(x=dat$Sepal.Length, y=dat$Sepal.Width, main="Sepal Length vs. Width in Iris Species", xlab="Sepal Lengths (cm)", ylab="Sepal Widths (cm)", col=dat$Species)
 
 # 2.  Write the code to save it (with meaningful labels) as a jpeg file
-
+jpeg(filename="./Iris_Sepal_Graph.jpg")
+plot(x=dat$Sepal.Length, y=dat$Sepal.Width, main="Sepal Length vs. Width in Iris Species", xlab="Sepal Lengths (cm)", ylab="Sepal Widths (cm)", col=dat$Species)
+dev.off()
 
 # 3.  Subset the Iris data set to only include rows from the setosa and virginica Species
-
+dat_setosa= dat[1:50,1:5]
+dat_virginica= dat[101:150,1:5]
+s_a_v= rbind(dat_setosa,dat_virginica)
 
 # 4.  Write code to save this new subset as a .csv file called setosa_and_virginica.csv
+write.csv(s_a_v,"./setosa_and_virginica.csv", row.names = TRUE)
 
 
 # 5.  Upload this R script (with all answers filled in and tasks completed) to canvas and GitHub
       # I should be able to run your R script and get all the plots created and saved, etc.
+
+
+
+     
