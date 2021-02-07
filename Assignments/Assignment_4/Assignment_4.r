@@ -1,0 +1,6 @@
+data <- read.csv("../../Data/ITS_mapping.csv", header=TRUE, sep='\t')
+png('silly_boxplot.png', width= 1000)
+boxplot(data$Lat~data$Ecosystem)
+summary(data)
+ncol(data)
+nrow(data)
