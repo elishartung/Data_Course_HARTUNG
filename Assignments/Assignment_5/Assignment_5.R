@@ -10,6 +10,7 @@ library(colorblindr)
 
 # Load the first data set we will work with (built-in to ggplot)
 data("midwest", package = "ggplot2")
+midwest
 
 # Intro to ggplot syntax
 
@@ -97,6 +98,8 @@ p3
 # Don't like those colors?
 p3 + scale_color_brewer(palette = "Set1")
 
+p3 + scale_color_viridis_d()
+
 # Want more color choices? You can check them out in the RColorBrewer package, or even make your own
 brewer.pal.info
 
@@ -148,7 +151,7 @@ p5 + geom_bar(stat="identity") # something wrong with this picture!
 
 
 # Geoms for looking at a single variable's distribution:
-data("MplsStops")
+data(MplsStops)
 
 ggplot(MplsStops, aes(x=lat)) + geom_histogram() + labs(title = "Latitude of police stops in Minneapolis - 2017")
 ggplot(MplsStops, aes(x=lat, fill = race)) + geom_density(alpha = .5) + labs(title = "Latitude of police stops in Minneapolis - 2017")
