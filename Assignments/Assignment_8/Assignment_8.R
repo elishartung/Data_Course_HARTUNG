@@ -50,19 +50,7 @@ add_predictions(mushroom,mod2) %>%
   geom_point(aes(y=pred), color= "Black") +
   geom_smooth(aes(y=GrowthRate), method="lm")
 
-non<-read.csv("../../Data/non_linear_relationship.csv")
-ggplot(non,aes(x=predictor, y=response)) +
-  geom_point() +
-  geom_smooth(method="nls")
 
-library()
-mod3<- glm(data=non, formula= response~ cuberoot(predictor))
 
-add_predictions(non,mod3) %>%
-  ggplot(aes(x=predictor)) +
-  geom_point(aes(y= response)) +
-  geom_point(aes(y=pred), color="Red") +
-  geom_smooth(aes(y=response), method="lm")
 
-library(gnm)
-mod3 <- gnm(formula=response~predictor, data=non)
+
