@@ -1,0 +1,24 @@
+---
+
+output:
+  html_document:
+    toc: yes
+    toc_float:
+      collapsed: false
+      echo: false 
+pagetitle: Eli Hartung - Utah Valley University
+---
+
+## [HOME](https://elishartung.github.io/) | [Research and Experience]() | [About Me]() 
+
+___
+# Contact Info:
+## Eli Hartung
+## Utah Valley University
+## 800 W University Parkway - SB243c
+## Orem, UT 84058
+## elishartung@gmail.com
+
+
+![](./IMG_0423.JPG)
+___
